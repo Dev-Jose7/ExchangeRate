@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de divisas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="apple-touch-icon" sizes="192x192" href="img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Conversor de divisas</h1>
+            <p>Mantente al tanto del precio de todas las divisas</p>
+        </header>
+
+        <section class="summary">
+            <div class="currency">
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                </div>
+
+                <div>
+                    <img>
+                </div>
+                
+                <div>
+                    <select name="" id="currencyBase">
+                        <option value="USD">USD</option>
+                    </select>
+                    <input type="number" min="1" value="1" id="inputBase">
+                </div>
+            </div>
+            
+            <i class="fas fa-exchange-alt" id="change"></i>
+
+            <div class="currency">
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                </div>
+
+                <div>
+                    <img>
+                </div>
+
+                <div>
+                    <select name="" id="currencyExchange">
+                    </select>
+                    <input type="number" min="1" value="1" id="inputExchange">
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <button class="btn-add" id="refresh">Actualizar valores</button>
+        </footer>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>

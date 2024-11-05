@@ -1,0 +1,195 @@
+/* Variables de colores */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333;
+    --accent-color: #FFC107;
+    --text-color: #fff;
+    --background-color: #1c1c1c;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    overflow: hidden; /* Evita el scroll */
+    background-color: var(--background-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header h1 {
+    font-size: 4vh;
+    color: var(--accent-color);
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    flex: 2;
+    gap: 5vh;
+}
+
+.currency {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+    height: 20vh;
+}
+
+.currency div:first-child{
+    margin-top: 1vh;
+}
+
+.currency p {
+    margin-top: 10px;
+}
+
+/* Estilos para select e input */
+select,
+input{
+    font-size: 3.5vw;
+}
+
+select {
+    background-color: transparent; /* Fondo transparente */
+    color: var(--text-color); /* Color del texto */
+    border-radius: 5px;
+    padding: 10px;
+    appearance: none; /* Elimina el estilo predeterminado */
+    outline: none; /* Elimina el contorno al enfocar */
+}
+
+input[type="number"] {
+    background-color: transparent; /* Fondo transparente */
+    color: var(--text-color); /* Color del texto */
+    border: 1px solid var(--accent-color); /* Borde con color de acento */
+    border-radius: 5px;
+    padding: 10px;
+    outline: none; /* Elimina el contorno al enfocar */
+    text-align: center;
+    
+}
+
+.currency:first-of-type select,
+.currency:first-of-type input{
+    border: 1px solid var(--accent-color); /* Borde con color de acento */
+}
+
+.currency:last-of-type select,
+.currency:last-of-type input{
+    border: 1px solid var(--primary-color); /* Borde con color de acento */
+}
+
+.footer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-add {
+    padding: 15px 30px;
+    font-size: 2.2vh;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: var(--accent-color);
+}
+
+i {
+    transform: scale(1.5);
+}
+
+i:hover {
+    color: var(--accent-color);
+}
+
+
+.loading {
+    display: none; /* Ocultar spinner por defecto */
+    justify-content: center; /* Centra el spinner */
+    align-items: center; /* Centra vertical y horizontalmente */
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; /* Color gris claro */
+    border-top: 8px solid var(--primary-color); /* Color del borde superior */
+    border-radius: 50%;
+    width: 50px; /* Tamaño del spinner */
+    height: 50px; /* Tamaño del spinner */
+    animation: spin 1s linear infinite; /* Animación */
+}
+
+/* Animación de rotación */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+
+    .header h1 {
+        font-size: 2.8vw;
+    }
+
+    .summary{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .currency{
+        width: 40%;
+        height: unset;
+    }
+
+    .currency div:last-child select{
+        margin-right: 1.5vw;
+    }
+
+    select,
+    input{
+        font-size: 1.2vw;
+    }
+
+    .btn-add {
+        font-size: 1.25vw;
+    }
+}
