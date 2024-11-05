@@ -90,6 +90,7 @@ select {
 }
 
 input[type="number"] {
+    width: 50%;
     background-color: transparent; /* Fondo transparente */
     color: var(--text-color); /* Color del texto */
     border: 1px solid var(--accent-color); /* Borde con color de acento */
@@ -98,6 +99,10 @@ input[type="number"] {
     outline: none; /* Elimina el contorno al enfocar */
     text-align: center;
     
+}
+
+.currency div:last-child{
+    justify-content: space-evenly;
 }
 
 .currency:first-of-type select,
@@ -183,9 +188,13 @@ i:hover {
         margin-right: 1.5vw;
     }
 
+    .currency div:last-child{
+        width: 80%;
+    }
+
     select,
     input{
-        font-size: 1.2vw;
+        font-size: 1vw;
     }
 
     .btn-add {
