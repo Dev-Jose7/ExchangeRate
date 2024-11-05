@@ -180,16 +180,12 @@ i:hover {
     }
 
     .currency{
-        width: 40%;
+        width: 35%;
         height: unset;
     }
 
     .currency div:last-child select{
         margin-right: 1.5vw;
-    }
-
-    .currency div:last-child{
-        width: 80%;
     }
 
     select,

@@ -70,27 +70,34 @@ document.addEventListener("DOMContentLoaded", function() {
     // Imprime las opciones de moneda y actualiza la interfaz de usuario.
     async function printCurrency() {
         loading("none", "flex"); // Muestra un indicador de carga.
-        await getData(currencyBase.value); // Obtiene las tasas de cambio.
+        
+        try {
+            await getData(currencyBase.value); // Obtiene las tasas de cambio.
 
-        // Rellena los selectores de moneda con las opciones disponibles.
-        [...document.querySelectorAll("select")].forEach(select => {
-            select.innerHTML = "";
-            Object.keys(currencyData).forEach(currency => {
-                if (currency != currencyBase.value) {   
-                    select.innerHTML += `<option value="${currency}">${currency}</option>`;
-                }
+            // Rellena los selectores de moneda con las opciones disponibles.
+            [...document.querySelectorAll("select")].forEach(select => {
+                select.innerHTML = "";
+                Object.keys(currencyData).forEach(currency => {
+                    if (currency != currencyBase.value) {   
+                        select.innerHTML += `<option value="${currency}">${currency}</option>`;
+                    }
+                });
             });
-        });
 
-        // Establece la moneda de intercambio seleccionada.
-        if (selectExchange == "") {
-            currencyExchange.value = "COP"; // Valor por defecto.
-        } else {
-            currencyExchange.value = selectExchange;
+            // Establece la moneda de intercambio seleccionada.
+            if (selectExchange == "") {
+                currencyExchange.value = "COP"; // Valor por defecto.
+            } else {
+                currencyExchange.value = selectExchange;
+            }
+
+            countryCurrency(); // Actualiza las imágenes de las banderas.
+            calculateRate("base"); // Calcula la tasa de cambio.
+        } catch (error) {
+            document.querySelector("h1").textContent = "Sin respuesta del servidor";
+            document.querySelector("p").textContent = "Recarga la página nuevamente";
+            loading("none", "none");
         }
-
-        countryCurrency(); // Actualiza las imágenes de las banderas.
-        calculateRate("base"); // Calcula la tasa de cambio.
     }
 
     // Calcula la tasa de cambio en función del tipo de entrada.
