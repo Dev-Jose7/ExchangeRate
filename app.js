@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Actualiza las imágenes de las banderas en la interfaz.
     function countryCurrency() {
-        let imgCurrencyBase = `https://flagcdn.com/h24/${currencyCountry[currencyBase.value]}.png`;
-        let imgCurrencyExchange = `https://flagcdn.com/h24/${currencyCountry[currencyExchange.value]}.png`;
+        let imgCurrencyBase = `https://flagcdn.com/h20/${currencyCountry[currencyBase.value]}.png`;
+        let imgCurrencyExchange = `https://flagcdn.com/h20/${currencyCountry[currencyExchange.value]}.png`;
 
         console.log(imgCurrencyBase);
         console.log(imgCurrencyExchange);
